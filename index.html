@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Afro Beauty</title>
+<meta name="description" content="African hair care, skin care and beauty products, shipped Australia-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Kumbh+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: royal-blue photo hero with gold call to action, black trust bar, cream shop floor with photo range tiles. Single theme by choice. */
+:root{
+  color-scheme: light;
+  --ink:#14151b;        /* cocoa plum, text and dark rooms */
+  --ink-2:#0b2f6e;
+  --shea:#f8f3ea;       /* page */
+  --shea-2:#efe6d6;     /* panels */
+  --card:#fffdf9;
+  --gold:#d4951f;
+  --gold-soft:#f6cf63;
+  --hibiscus:#0f3f95;   /* actions */
+  --hibiscus-2:#0b2f6e;
+  --muted:#5f5a55;
+  --line:rgba(20,21,27,.14);
+  --display:"Playfair Display","Georgia","Times New Roman",serif;
+  --body:"Kumbh Sans","Segoe UI",system-ui,sans-serif;
+  --r:14px;
+  --brown:#4a2a17;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--shea);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,7.4vw,5rem)}
+h2{font-size:clamp(1.9rem,4.6vw,3.1rem)}
+h3{font-size:1.3rem}
+em{font-style:italic;color:var(--gold)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.lede{color:var(--muted);max-width:60ch}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:.93rem;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(180deg,#fbd75e,#e2a422);color:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+.btn-primary:hover{background:linear-gradient(180deg,#fde07a,#e8ad2c)}
+.btn-gold{background:linear-gradient(180deg,#fbd75e,#e2a422);color:var(--ink)}
+.btn-ghost{border-color:currentColor;background:transparent;color:inherit}
+.btn-block{width:100%}
+
+/* Header: sits clear over the hero photo, turns solid blue once you scroll */
+html{scroll-padding-top:84px}
+header.site{position:fixed;top:0;left:0;right:0;z-index:40;color:#fff;transition:background .25s,box-shadow .25s}
+header.site.scrolled,header.site.open{background:rgba(8,9,12,.97);box-shadow:0 2px 18px rgba(0,0,0,.25)}
+.bar{display:flex;align-items:center;gap:clamp(14px,2.4vw,40px);min-height:clamp(64px,8.2vw,126px);padding:0 clamp(14px,2.8vw,44px) 0 clamp(14px,5.8vw,92px);transition:min-height .25s}
+header.site.scrolled .bar{min-height:clamp(60px,5.4vw,84px)}
+.brand img{height:clamp(54px,10vw,158px);width:auto;display:block;transition:height .25s;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+header.site.scrolled .brand img{height:clamp(48px,5vw,76px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{width:clamp(38px,4.2vw,62px);height:auto;flex:none}
+.brand b{display:block;font-family:"Cinzel",var(--display);font-weight:500;font-size:clamp(1.2rem,2.5vw,2.35rem);line-height:1;letter-spacing:.02em;white-space:nowrap;background:linear-gradient(180deg,#f3dc9d,#c9973f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;margin-top:5px;font-size:clamp(.5rem,.95vw,.9rem);letter-spacing:.42em;color:#fff;white-space:nowrap}
+nav.main{display:flex;align-items:center;gap:clamp(14px,2.7vw,42px);font-size:clamp(.78rem,1.2vw,1.15rem);white-space:nowrap;font-weight:500;letter-spacing:.03em;text-transform:uppercase;margin:0 auto 0 clamp(8px,4.6vw,74px)}
+nav.main a{text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:6px 0;border-bottom:2px solid transparent}
+nav.main a.active{border-bottom-color:var(--gold-soft);color:var(--gold-soft)}
+nav.main a:hover{color:var(--gold-soft)}
+.caret{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px)}
+.dd{position:relative}
+.dd-menu{position:absolute;top:100%;left:-18px;min-width:210px;background:#fff;color:var(--ink);border-radius:10px;padding:8px;box-shadow:0 14px 40px rgba(0,0,0,.25);display:none;flex-direction:column;border-top:3px solid var(--gold)}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:flex}
+.dd-menu a{padding:9px 12px!important;border:0!important;border-radius:6px;text-transform:none;letter-spacing:0;font-size:.95rem}
+.dd-menu a:hover{background:var(--shea);color:var(--hibiscus)!important}
+.hicons{display:flex;align-items:center;gap:clamp(8px,1.8vw,30px);margin-left:auto}
+.hicon{position:relative;background:none;border:0;color:#fff;padding:6px;display:grid;place-items:center;text-decoration:none}
+.hicon svg{max-width:none;width:clamp(24px,2.3vw,36px);height:clamp(24px,2.3vw,36px);fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hicon:hover{color:var(--gold-soft)}
+.count{position:absolute;top:-2px;right:-4px;background:linear-gradient(180deg,#fbd75e,#e2a422);color:var(--ink);border-radius:999px;min-width:19px;height:19px;display:grid;place-items:center;font-size:.7rem;font-weight:700;padding:0 5px;font-variant-numeric:tabular-nums}
+.menu-btn{display:none}
+@media (max-width:1020px){
+  nav.main{position:absolute;left:0;right:0;top:100%;background:rgba(8,9,12,.98);flex-direction:column;align-items:stretch;gap:0;margin:0;padding:4px 20px 18px;display:none;font-size:1rem}
+  nav.main.open{display:flex}
+  nav.main a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)!important;justify-content:space-between}
+  .dd-menu{display:none!important}
+  .menu-btn{display:grid}
+  .acct{display:none}
+}
+
+/* Hero: the photo fills the frame, headline sits low over it */
+.hero{position:relative;height:clamp(520px,40.7vw,740px);background:#0c3a8c url(img/hero.jpg) 50% 24%/cover no-repeat;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:0 16px clamp(14px,.9vw,18px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,5,8,.96) 0,rgba(4,5,8,.75) 9%,rgba(4,5,8,0) 30%),radial-gradient(60% 30% at 50% 76%,rgba(8,20,50,.38),rgba(8,20,50,0) 100%)}
+.hero>*{position:relative}
+.hero h1{font-size:clamp(2.9rem,6.9vw,7.1rem);font-weight:500;line-height:1;letter-spacing:-.01em;text-shadow:0 3px 22px rgba(4,18,54,.6)}
+.hero h1 em{font-style:italic;font-weight:600;background:linear-gradient(180deg,#fde58a 5%,#eab32f 70%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em;filter:drop-shadow(0 3px 10px rgba(4,18,54,.45))}
+.hero-cats{list-style:none;margin:clamp(6px,.6vw,12px) 0 clamp(14px,1.3vw,22px);padding:0;display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px;font-size:clamp(1rem,1.62vw,1.6rem);text-shadow:0 1px 10px rgba(4,18,54,.7)}
+.hero-cats li{padding:0 clamp(10px,1.4vw,22px);border-left:1.5px solid rgba(255,255,255,.8);line-height:1.15}
+.hero-cats li:first-child{border-left:0}
+.hero-cats a{text-decoration:none}
+.hero-cats a:hover{color:var(--gold-soft)}
+.btn-shop{display:inline-flex;align-items:center;justify-content:center;gap:14px;width:clamp(220px,19.8vw,320px);height:clamp(46px,3.5vw,58px);border-radius:999px;background:linear-gradient(180deg,#fde27a 0,#f3bf3a 50%,#dc9d1e 100%);color:var(--ink);font-weight:700;font-size:clamp(1rem,1.5vw,1.45rem);letter-spacing:.05em;text-decoration:none;box-shadow:0 6px 22px rgba(4,18,54,.45),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .15s,filter .15s}
+.btn-shop:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.arrow{display:inline-block;width:1.1em;height:2px;background:currentColor;position:relative}
+.arrow::after{content:"";position:absolute;right:0;top:50%;width:.42em;height:.42em;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+@media (max-width:700px){
+  .hero{height:600px;background-position:52% 40%;padding-bottom:26px}
+  .hero::before{background:linear-gradient(180deg,rgba(4,5,8,.85) 0,rgba(4,5,8,0) 22%),linear-gradient(180deg,rgba(8,20,50,0) 45%,rgba(8,20,50,.7) 100%)}
+  .hero-cats{max-width:330px}
+}
+
+/* Trust bar */
+.perks{background:#0d0e12;color:#fff;padding:0;border-top:1px solid rgba(255,255,255,.5)}
+.perks ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:1460px}
+.perks li{display:flex;align-items:center;justify-content:center;gap:14px;padding:clamp(12px,1.1vw,18px) 10px;font-size:clamp(.84rem,1.18vw,1.12rem);position:relative}
+.perks li+li::before{content:"";position:absolute;left:0;top:28%;bottom:28%;width:1px;background:var(--gold-soft)}
+.perks svg{width:clamp(26px,2.4vw,36px);height:auto;flex:none;stroke:var(--gold-soft);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:820px){.perks ul{grid-template-columns:1fr 1fr}.perks li{justify-content:flex-start;padding:13px 14px}.perks li:nth-child(odd)::before{display:none}.perks li:nth-child(n+3){border-top:1px solid rgba(236,208,138,.25)}}
+
+/* Section headings with gold rules */
+.rule-head{display:flex;align-items:center;gap:clamp(14px,2.6vw,40px);justify-content:center;margin-bottom:clamp(16px,1.6vw,26px)}
+.rule-head h2{white-space:nowrap;flex:none;font-size:clamp(1.8rem,3.1vw,3rem)}
+.rule-head::before,.rule-head::after{content:"";height:1.5px;background:var(--gold);flex:0 1 230px;min-width:12px}
+.sub{text-align:center;color:var(--muted);margin:-8px auto 26px;max-width:56ch}
+
+/* Range tiles */
+.range{padding:clamp(18px,1.6vw,26px) 0 clamp(30px,3vw,50px)}
+.range .wide{max-width:1500px;margin:0 auto;padding:0 clamp(14px,2.1vw,33px)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,.7vw,12px)}
+.tile{position:relative;aspect-ratio:371/249;border-radius:clamp(10px,1vw,16px);overflow:hidden;border:0;padding:0;color:#fff;background:#5a3a26;display:block;width:100%;box-shadow:0 2px 10px rgba(74,42,23,.18)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover img{transform:scale(1.06)}
+.tile-text{position:absolute;left:0;right:0;bottom:0;padding:22% 8px clamp(8px,.75vw,12px);background:linear-gradient(180deg,rgba(70,40,12,0) 0,rgba(70,40,12,.5) 42%,rgba(52,28,8,.94) 100%);display:grid;gap:clamp(2px,.3vw,5px);justify-items:center}
+.tile b{font-family:var(--display);font-weight:500;font-size:clamp(1.15rem,1.95vw,1.9rem);line-height:1.1;text-shadow:0 1px 8px rgba(40,20,8,.6)}
+.tile small{font-size:clamp(.72rem,1.02vw,1rem)}
+.tile i{white-space:nowrap;font-style:normal;border:1.5px solid var(--gold-soft);border-radius:999px;padding:clamp(3px,.35vw,6px) clamp(12px,1.6vw,26px);font-size:clamp(.66rem,.92vw,.9rem);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:clamp(2px,.4vw,8px);display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.tile:hover i{background:#fff;color:var(--brown)}
+@media (max-width:860px){.tiles{grid-template-columns:1fr 1fr}.tile{aspect-ratio:1/.92}.tile small{font-size:.7rem}}
+
+/* Wax-print accents taken from the hero outfits */
+.print{height:16px;background-color:#e4432a;background-image:radial-gradient(ellipse 9px 6px at 10px 10px,#f6c544 97%,transparent),radial-gradient(ellipse 6px 9px at 30px 27px,#f6c544 97%,transparent),radial-gradient(circle 4px at 27px 8px,#f6c544 97%,transparent),radial-gradient(circle 5px at 8px 30px,#f6c544 97%,transparent);background-size:40px 40px}
+.print.teal{background-color:#2f8f86;background-image:radial-gradient(ellipse 9px 6px at 10px 10px,#f29a1f 97%,transparent),radial-gradient(ellipse 6px 9px at 30px 27px,#f29a1f 97%,transparent),radial-gradient(circle 4px at 27px 8px,#f6c544 97%,transparent),radial-gradient(circle 5px at 8px 30px,#f29a1f 97%,transparent)}
+
+/* Best sellers rail */
+.best{padding:clamp(34px,3.4vw,56px) 0}
+.best-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
+.best-rail .prod{flex:0 0 clamp(180px,22vw,250px);scroll-snap-align:start}
+
+/* Deal banner */
+.deal{position:relative;background:linear-gradient(120deg,#0b0c10,#1b1408);color:#fff;text-align:center;overflow:hidden;padding:clamp(40px,4.4vw,70px) 20px}
+.deal .print{position:absolute;top:-10%;bottom:-10%;width:clamp(70px,19vw,300px);height:auto;background-size:56px 56px}
+.deal .print.l{left:-30px;transform:skewX(-10deg)}
+.deal .print.r{right:-30px;transform:skewX(-10deg)}
+.deal>div:not(.print){position:relative;max-width:560px;margin:0 auto;padding:0 clamp(40px,8vw,0px)}
+.deal h2{font-size:clamp(1.9rem,4.2vw,3.4rem)}
+.deal p{margin:10px 0 20px;color:rgba(255,255,255,.88)}
+.code{display:inline-block;border:1.5px dashed var(--gold-soft);color:var(--gold-soft);border-radius:6px;padding:2px 10px;font-weight:700;letter-spacing:.1em}
+
+/* Why shop with us */
+.why-sec{background:var(--shea-2)}
+.why-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,60px);align-items:center}
+.why-grid p+p{margin-top:12px}
+.cards4{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fcard{background:var(--card);border-radius:14px;padding:20px;border-bottom:3px solid var(--gold)}
+.fcard svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.fcard b{display:block;font-family:var(--display);font-weight:500;font-size:1.15rem;margin:8px 0 2px}
+.fcard span{font-size:.9rem;color:var(--muted)}
+@media (max-width:820px){.why-grid{grid-template-columns:1fr}}
+@media (max-width:440px){.cards4{grid-template-columns:1fr}}
+
+/* Newsletter band */
+.newsband{background:var(--ink);color:#fff;text-align:center;padding:clamp(34px,4vw,56px) 20px}
+.newsband h2 em{background:linear-gradient(180deg,#fde58a,#eab32f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.newsband .news{margin:18px auto 0;max-width:440px}
+.newsband .news .field{background:#fff;color:var(--ink);border-radius:8px}
+.newsband .news .btn{border-radius:8px}
+
+/* Sections */
+section{padding:72px 0}
+.sec-head{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:end;justify-content:space-between;margin-bottom:30px}
+.sec-head h2{margin-top:8px}
+@media (max-width:700px){section{padding:52px 0}}
+
+/* Shop */
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;flex:1 1 320px;min-width:0;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 16px;font-weight:600;font-size:.88rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--shea);border-color:var(--ink)}
+.field{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 16px;font:inherit;font-size:.9rem;color:var(--ink);min-width:0}
+.tools .field{flex:1 1 150px;max-width:240px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 18px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:18px 12px}}
+.prod{display:flex;flex-direction:column;min-width:0}
+.shot{position:relative;aspect-ratio:1;border-radius:var(--r);overflow:hidden;background:var(--shea-2)}
+.shot svg{width:100%;height:100%}
+.badge{position:absolute;z-index:2;top:10px;left:10px;background:var(--ink);color:var(--shea);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.badge.sale{background:var(--hibiscus)}
+.add{position:absolute;z-index:2;right:10px;bottom:10px;width:42px;height:42px;border-radius:50%;border:0;background:var(--ink);color:var(--shea);font-size:1.4rem;line-height:1;display:grid;place-items:center;transition:background .15s,transform .15s}
+.add:hover{background:var(--hibiscus);transform:scale(1.06)}
+.prod .cat{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:12px}
+.prod h3{font-size:1.12rem;margin-top:3px;overflow-wrap:anywhere}
+.price{margin-top:4px;font-weight:700;font-variant-numeric:tabular-nums}
+.price s{color:var(--muted);font-weight:500;margin-left:6px}
+.stars{color:var(--gold);font-size:.8rem;letter-spacing:.1em}
+.empty{grid-column:1/-1;padding:40px 0;color:var(--muted);text-align:center}
+.more{display:flex;justify-content:center;margin-top:30px}
+
+/* Services */
+.services{background:#14151b;color:var(--shea)}
+.services .lede{color:rgba(244,236,225,.72)}
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid rgba(244,236,225,.16)}
+.svc li{display:grid;grid-template-columns:54px 1fr auto auto;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(244,236,225,.16)}
+.svc .n{font-family:var(--display);font-style:italic;color:var(--gold-soft);font-size:1.1rem}
+.svc h3{font-size:1.4rem}
+.svc p{font-size:.9rem;color:rgba(244,236,225,.68)}
+.svc .from{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.svc .from small{display:block;font-weight:500;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft)}
+.svc .btn{padding:9px 16px;font-size:.84rem}
+@media (max-width:640px){.svc li{grid-template-columns:1fr auto;gap:6px 14px}.svc .n{display:none}.svc .btn{grid-column:1/-1;justify-self:start;margin-top:6px}}
+
+/* Story */
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.story-art{position:relative;aspect-ratio:4/5;border-radius:var(--r) var(--r) 200px 200px;overflow:hidden;background:linear-gradient(200deg,#3b2029,#1c1116)}
+.story-art svg{width:100%;height:100%}
+.story-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story p+p{margin-top:14px}
+.why{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+.why b{display:block;font-family:var(--display);font-weight:500;font-size:1.12rem}
+.why span{font-size:.9rem;color:var(--muted)}
+.why li{border-top:1px solid var(--gold);padding-top:12px}
+@media (max-width:820px){.story-grid{grid-template-columns:1fr;gap:28px}.story-art{aspect-ratio:5/4;max-width:520px}}
+@media (max-width:480px){.why{grid-template-columns:1fr}}
+
+/* Reviews */
+.reviews{background:var(--shea-2)}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.quote{flex:0 0 min(86%,380px);scroll-snap-align:start;background:var(--card);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.quote blockquote{margin:0;font-family:var(--display);font-size:1.22rem;line-height:1.35}
+.quote footer{margin-top:auto;font-size:.88rem}
+.quote footer b{display:block}
+.quote footer span{color:var(--muted)}
+.rail-nav{display:flex;gap:8px}
+.rail-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:1.1rem}
+
+/* Booking */
+.book{background:radial-gradient(120% 100% at 0% 0%,#1450b4 0%,var(--ink-2) 50%,#081f4d 100%);color:var(--shea)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+.book .lede{color:rgba(244,236,225,.75);margin-top:14px}
+.visit{margin-top:28px;display:grid;gap:16px;font-size:.95rem}
+.visit dt{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+.visit dd{margin:2px 0 0}
+form.panel{background:var(--shea);color:var(--ink);border-radius:var(--r);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form.panel label{display:grid;gap:6px;font-size:.82rem;font-weight:700;min-width:0}
+form.panel .full{grid-column:1/-1}
+form.panel .field{border-radius:10px;width:100%;max-width:none}
+textarea.field{resize:vertical;min-height:84px}
+.note{font-size:.82rem;color:var(--muted)}
+.result{grid-column:1/-1;background:var(--shea-2);border-radius:10px;padding:14px;font-size:.88rem;display:none;gap:10px}
+.result.on{display:grid}
+.result pre{margin:0;white-space:pre-wrap;font-family:var(--body);overflow-wrap:anywhere}
+.result .cta .btn{padding:10px 16px;font-size:.85rem}
+@media (max-width:860px){.book-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:520px){form.panel{grid-template-columns:1fr;padding:20px}}
+
+/* Footer */
+footer.site{background:var(--ink);color:rgba(244,236,225,.75);padding:52px 0 28px;font-size:.9rem}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot h4{margin:0 0 12px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--shea)}
+.news{display:flex;gap:8px;margin-top:16px;max-width:340px}
+.news .field{flex:1;background:transparent;border-color:rgba(244,236,225,.3);color:var(--shea)}
+.news .btn{padding:10px 16px}
+.legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(244,236,225,.14);font-size:.8rem;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+@media (max-width:800px){.foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}}
+
+/* Cart drawer */
+.scrim{position:fixed;inset:0;background:rgba(20,21,27,.5);z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--shea);z-index:60;transform:translateX(102%);transition:transform .25s;display:flex;flex-direction:column;visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-size:1.5rem}
+.x{background:none;border:1px solid var(--line);border-radius:50%;width:40px;height:40px;font-size:1.1rem;color:var(--ink)}
+.ship{padding:14px 20px;font-size:.84rem;border-bottom:1px solid var(--line)}
+.meter{height:5px;background:var(--shea-2);border-radius:9px;margin-top:8px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+.lines{flex:1;overflow-y:auto;padding:6px 20px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.line .shot{border-radius:10px}
+.line b{display:block;font-size:.95rem;overflow-wrap:anywhere}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;margin-top:6px}
+.qty button{width:32px;height:32px;border:0;background:none;font-size:1rem;color:var(--ink)}
+.qty span{min-width:20px;text-align:center;font-weight:700;font-size:.88rem;font-variant-numeric:tabular-nums}
+.line .amt{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.rm{background:none;border:0;color:var(--muted);font-size:.78rem;text-decoration:underline;padding:4px 0;display:block;margin-left:auto}
+.sum{padding:16px 20px 20px;border-top:1px solid var(--line);display:grid;gap:10px;background:var(--card)}
+.promo{display:flex;gap:8px}
+.promo .field{flex:1;border-radius:10px;text-transform:uppercase}
+.promo .btn{padding:10px 16px;border-radius:10px}
+.row{display:flex;justify-content:space-between;font-size:.92rem;font-variant-numeric:tabular-nums}
+.row.total{font-size:1.15rem;font-weight:700;padding-top:8px;border-top:1px solid var(--line)}
+.cart-empty{padding:50px 0;text-align:center;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);background:var(--ink);color:var(--shea);padding:11px 20px;border-radius:999px;font-size:.88rem;font-weight:600;opacity:0;transition:.25s;z-index:70;pointer-events:none;max-width:90%;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* Product cards */
+.prod{background:var(--card);border:1px solid rgba(194,145,58,.28);border-radius:14px;padding:10px 10px 12px;transition:box-shadow .2s,transform .2s}
+.prod:hover{box-shadow:0 12px 30px rgba(74,42,23,.14);transform:translateY(-3px)}
+.prod .shot{border-radius:9px;background:#fff}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+.prod h3{font-size:1.08rem;line-height:1.2}
+.prod .price{color:var(--ink);font-size:1.02rem;margin-bottom:10px}
+.addbtn{margin-top:auto;border:1.5px solid var(--gold);background:transparent;color:var(--ink);border-radius:999px;padding:8px 10px;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;transition:background .15s}
+.addbtn:hover{background:linear-gradient(180deg,#fbd75e,#e2a422);border-color:transparent}
+.badge{background:var(--ink);color:var(--gold-soft)}
+.badge.sale{background:#e4432a;color:#fff}
+.chip[aria-pressed="true"]{background:var(--hibiscus);border-color:var(--hibiscus);color:#fff}
+
+.add{display:none}
+.services .rule-head h2,.services h3{color:#fff}
+.prod{display:flex;flex-direction:column}
+/* Product pages */
+main.pdp-on>:not(#pdp){display:none}
+#pdp{display:none;padding:clamp(96px,9vw,130px) 0 64px}
+main.pdp-on>#pdp{display:block}
+header.site.solid{background:rgba(8,9,12,.97)}
+header.site.solid .bar{min-height:clamp(60px,5.4vw,84px)}
+header.site.solid .brand img{height:clamp(48px,5vw,76px)}
+.crumbs{font-size:.86rem;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--muted)}
+.pdp-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,56px);align-items:start}
+.pdp-photo{position:relative;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(212,149,31,.35);box-shadow:0 18px 44px rgba(74,42,23,.14)}
+.pdp-photo img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.pdp-info h1{font-size:clamp(1.9rem,3.6vw,3rem);margin:8px 0 6px}
+.pdp-price{font-size:1.6rem;font-weight:700;margin:10px 0 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.pdp-price s{font-size:1.05rem;color:var(--muted);font-weight:500}
+.pdp-price span{font-size:.85rem;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.pdp-desc{font-size:1.05rem;color:#3d3833;max-width:56ch}
+.pdp-buy{display:flex;gap:12px;align-items:center;margin:22px 0 18px}
+.pdp-buy .qty{margin:0;height:46px}
+.pdp-buy .qty button{width:40px;height:44px}
+.pdp-trust{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:6px;font-size:.9rem;color:var(--muted)}
+.pdp-trust li::before{content:"✓";color:var(--gold);font-weight:700;margin-right:8px}
+.pdp-more{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.pdp-card{background:var(--card);border-radius:14px;padding:24px;border-top:3px solid var(--gold)}
+.pdp-card h2{font-size:1.5rem;margin-bottom:12px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ticks li{padding-left:28px;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:linear-gradient(180deg,#fbd75e,#e2a422)}
+.ticks li::after{content:"";position:absolute;left:5px;top:.6em;width:5px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translateY(-2px)}
+.pdp-note{margin-top:14px;font-size:.85rem;color:var(--muted);background:var(--shea-2);border-radius:8px;padding:10px 12px}
+.plink{text-decoration:none;color:inherit;display:block}
+.prod h3 a{text-decoration:none}
+.prod h3 a:hover{color:var(--hibiscus)}
+@media (max-width:760px){.pdp-grid,.pdp-more{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="site" id="hdr">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="All Afro Beauty home"><img src="img/logo.png" alt="All Afro Beauty: hair, skin and beauty supplies"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <a class="active" href="#top">Home</a>
+      <div class="dd"><a href="#shop" data-cat="All">Shop <span class="caret"></span></a>
+        <div class="dd-menu"><a href="#shop" data-cat="All">All products</a><a href="#best">Best sellers</a><a href="#deals">Deals</a><a href="#shop" data-cat="Accessories">Accessories</a></div></div>
+      <div class="dd"><a href="#shop" data-cat="Hair">Hair <span class="caret"></span></a>
+        <div class="dd-menu"><a href="#shop" data-cat="Hair">All hair products</a><a href="#shop" data-cat="Hair Oil">Oils and growth</a><a href="#shop" data-cat="Styling">Styling</a><a href="#shop" data-cat="Scalp Care">Scalp care</a></div></div>
+      <div class="dd"><a href="#shop" data-cat="Skin">Skin <span class="caret"></span></a>
+        <div class="dd-menu"><a href="#shop" data-cat="Skin">All skin products</a><a href="#shop" data-cat="Body Lotion">Body lotions</a><a href="#shop" data-cat="Scrubs & Wash">Scrubs and washes</a><a href="#shop" data-cat="Serums & Oils">Serums and oils</a></div></div>
+      <div class="dd"><a href="#shop" data-cat="Bleaching Creams">Bleaching <span class="caret"></span></a>
+        <div class="dd-menu"><a href="#shop" data-cat="Bleaching Creams">All bleaching</a><a href="#shop" data-cat="Lightening Lotion">Lotions</a><a href="#shop" data-cat="Lightening Cream">Creams</a><a href="#shop" data-cat="Lightening Oil">Oils and washes</a></div></div>
+      <a href="#shop" data-cat="Hair Masks">Hair Masks</a>
+      <a href="#shop" data-cat="All">Brands</a>
+    </nav>
+    <div class="hicons">
+      <button class="hicon" id="searchBtn" type="button" aria-label="Search products"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+      <a class="hicon acct" href="#book" aria-label="Contact and bookings"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2"/><path d="M4.5 21v-1.500a7.5 7.5 0 0 1 15 0V21z"/></svg></a>
+      <button class="hicon" id="cartBtn" type="button" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4zM9 8V6.500a3 3 0 0 1 6 0V8"/></svg><span class="count" id="cartCount">0</span></button>
+      <button class="hicon menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section id="pdp" aria-live="polite"></section>
+  <div class="hero">
+    <h1>Shop African <em>Beauty</em></h1>
+    <ul class="hero-cats">
+      <li><a href="#shop" data-cat="Hair">Hair Care</a></li>
+      <li><a href="#shop" data-cat="Skin">Skin Care</a></li>
+      <li><a href="#shop" data-cat="Bleaching Creams">Bleaching Creams</a></li>
+      <li><a href="#shop" data-cat="Hair Masks">Hair Masks</a></li>
+      <li><a href="#shop" data-cat="All">Beauty Supplies</a></li>
+    </ul>
+    <a class="btn-shop" href="#shop">SHOP NOW <span class="arrow"></span></a>
+  </div>
+
+  <div class="perks">
+    <ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7zM6 19a1.6 1.6 0 1 0 0-3.200A1.6 1.6 0 0 0 6 19zM17 19a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.200z"/></svg>Fast Australia-wide Shipping</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8M9.5 9l2 2 3.5-4"/></svg>100% Genuine Products</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5zM8.5 12l2.5 2.500L16 9.5"/></svg>Secure Payments</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-2 3-5 3"/></svg>Local Customer Support</li>
+    </ul>
+  </div>
+
+  <div class="range">
+    <div class="wide">
+      <div class="rule-head"><h2>Shop Our Range</h2></div>
+      <div class="tiles">
+        <button class="tile" type="button" data-cat="Hair" data-go><img src="img/hair.jpg" alt=""><span class="tile-text"><b>Hair Products</b><small>Oils · Growth · Treatments</small><i>Shop hair <span class="arrow"></span></i></span></button>
+        <button class="tile" type="button" data-cat="Skin" data-go><img src="img/skin.jpg" alt=""><span class="tile-text"><b>Skin Products</b><small>Cleansers · Moisturisers · Serums</small><i>Shop skin <span class="arrow"></span></i></span></button>
+        <button class="tile" type="button" data-cat="Bleaching Creams" data-go><img src="img/bleach.jpg" alt=""><span class="tile-text"><b>Bleaching Creams</b><small>Brightening · Even Tone · Glow</small><i>Shop bleaching <span class="arrow"></span></i></span></button>
+        <button class="tile" type="button" data-cat="Hair Masks" data-go><img src="img/mask.jpg" alt=""><span class="tile-text"><b>Hair Masks</b><small>Repair · Nourish · Strengthen</small><i>Shop masks <span class="arrow"></span></i></span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="print" aria-hidden="true"></div>
+
+  <section class="best" id="best">
+    <div class="wrap">
+      <div class="rule-head"><h2>Best Sellers</h2></div>
+      <p class="sub">The products our customers come back for.</p>
+      <div class="best-rail" id="bestRail" tabindex="0" aria-label="Best sellers"></div>
+    </div>
+  </section>
+
+  <section class="deal" id="deals">
+    <div class="print l" aria-hidden="true"></div><div class="print teal r" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow" style="color:var(--gold-soft)">New customer deal</p>
+      <h2 style="margin-top:8px">20% off your first order</h2>
+      <p>Use code <span class="code">WELCOME20</span> in your bag. Free shipping on orders over $75.</p>
+      <a class="btn-shop" href="#shop" data-cat="Deals" style="margin:0 auto">SHOP DEALS <span class="arrow"></span></a>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="rule-head"><h2>Shop All Products</h2></div>
+      <p class="sub" id="shopCount"></p>
+      <div class="tools">
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+        <label class="sr" for="search">Search products</label>
+        <input class="field" id="search" type="search" placeholder="Search products">
+        <label class="sr" for="sort">Sort</label>
+        <select class="field" id="sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="az">Name: A to Z</option>
+        </select>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="more"><button class="btn btn-ghost" id="moreBtn" type="button">Show more products</button></div>
+    </div>
+  </section>
+
+  <div class="print teal" aria-hidden="true"></div>
+
+  <section class="why-sec" id="story">
+    <div class="wrap why-grid">
+      <div>
+        <img src="img/p/Dummy-11.webp" alt="All Afro Beauty: embrace your beauty, celebrate your roots" style="width:150px;border-radius:12px;float:right;margin:0 0 12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.2)">
+        <p class="eyebrow">Why All Afro Beauty</p>
+        <h2 style="margin:8px 0 16px">African beauty, <em>close to home</em></h2>
+        <p class="lede">We bring together hair care, skin care and beauty favourites made for melanin-rich skin and textured hair, and ship them from Sydney to your door.</p>
+        <p class="lede">Every product on our shelves is the genuine article, chosen to celebrate confidence, individuality and the beauty of natural hair.</p>
+        <a class="btn-shop" href="#shop" style="margin-top:22px">SHOP NOW <span class="arrow"></span></a>
+      </div>
+      <div class="cards4">
+        <div class="fcard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7zM6 19a1.6 1.6 0 1 0 0-3.200A1.6 1.6 0 0 0 6 19zM17 19a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.200z"/></svg><b>Fast shipping</b><span>Sent Australia-wide, free over $75.</span></div>
+        <div class="fcard"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8M9.5 9l2 2 3.5-4"/></svg><b>Authentic only</b><span>Genuine products, never imitations.</span></div>
+        <div class="fcard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><b>Made for us</b><span>Chosen for textured hair and deeper skin tones.</span></div>
+        <div class="fcard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-2 3-5 3"/></svg><b>Local support</b><span>Real people in Sydney who know the products.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" style="background:var(--shea)">
+    <div class="wrap">
+      <div class="rule-head"><h2>Customer Love</h2></div>
+      <div class="rail" id="rail" tabindex="0" aria-label="Customer reviews">
+        <article class="quote"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>My braids lasted a full eight weeks and still looked neat when I took them out.</blockquote><footer><b>Zara Williams</b><span>Salon client</span></footer></article>
+        <article class="quote"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>The Deep Moisture Masque is the first mask that actually works on my 4C curls.</blockquote><footer><b>Kezia Okafor</b><span>Verified buyer</span></footer></article>
+        <article class="quote"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote>Beautiful protective styling, and stylists who really understand my hair.</blockquote><footer><b>Nadia Thompson</b><span>Salon client</span></footer></article>
+      </div>
+      <div class="rail-nav" style="justify-content:center;margin-top:14px">
+        <button type="button" id="prevQ" aria-label="Previous review">←</button>
+        <button type="button" id="nextQ" aria-label="Next review">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="rule-head"><h2>Salon Services</h2></div>
+      <p class="sub" style="color:rgba(255,255,255,.72)">Every appointment starts with a consultation, so the style suits your hair and how you live with it.</p>
+      <ul class="svc" id="svc"></ul>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap book-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--gold-soft)">Book or get in touch</p>
+        <h2 style="margin-top:8px">Take a seat in <em>our chair</em></h2>
+        <p class="lede">Tell us what you would like done and when. We reply to confirm your time and price.</p>
+        <dl class="visit">
+          <div><dt>Visit</dt><dd id="vAddr"></dd></div>
+          <div><dt>Hours</dt><dd>Mon to Fri 9am to 6pm<br>Sat 9am to 5pm · Sun closed</dd></div>
+          <div><dt>Call</dt><dd><a id="vPhone" href="#"></a></dd></div>
+        </dl>
+      </div>
+      <form class="panel" id="bookForm" novalidate>
+        <label>Your name<input class="field" id="bName" required autocomplete="name"></label>
+        <label>Phone<input class="field" id="bPhone" type="tel" required autocomplete="tel"></label>
+        <label>Service<select class="field" id="bService"></select></label>
+        <label>Preferred date<input class="field" id="bDate" type="date"></label>
+        <label class="full">Anything we should know?<textarea class="field" id="bNotes" placeholder="Hair length, style inspiration, allergies to products"></textarea></label>
+        <button class="btn btn-primary btn-block full" type="submit">Prepare my booking request</button>
+        <p class="note full" id="bErr" role="alert"></p>
+        <div class="result" id="bResult">
+          <pre id="bText"></pre>
+          <div class="cta">
+            <a class="btn btn-primary" id="bWa" target="_blank" rel="noopener">Send on WhatsApp</a>
+            <button class="btn btn-ghost" type="button" data-copy="bText">Copy request</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="print" aria-hidden="true"></div>
+  <section class="newsband">
+    <h2>Join the <em>All Afro</em> list</h2>
+    <p style="margin-top:8px;color:rgba(255,255,255,.8)">New arrivals, restocks and deals, straight to your inbox.</p>
+    <form class="news" id="newsForm">
+      <label class="sr" for="newsEmail">Email</label>
+      <input class="field" id="newsEmail" type="email" placeholder="Your email" required>
+      <button class="btn btn-gold" type="submit">Join</button>
+    </form>
+    <p class="note" id="newsMsg" style="color:var(--gold-soft);margin-top:8px"></p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img src="img/logo.png" alt="All Afro Beauty" style="height:120px"></a>
+        <p style="margin-top:14px;max-width:38ch">African hair care, skin care and beauty products, delivered across Australia.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#shop" data-cat="Hair">Hair products</a></li><li><a href="#shop" data-cat="Skin">Skin products</a></li><li><a href="#shop" data-cat="Bleaching Creams">Bleaching creams</a></li><li><a href="#shop" data-cat="Hair Masks">Hair masks</a></li><li><a href="#deals">Deals</a></li></ul></div>
+      <div><h4>Salon</h4><ul><li><a href="#services">Hair styling</a></li><li><a href="#services">Braiding</a></li><li><a href="#services">Hair colouring</a></li><li><a href="#services">Kids hair</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#book">Contact us</a></li><li><a href="#book">Book the salon</a></li><li>Shipping and returns</li><li>Privacy policy</li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 All Afro Beauty. All rights reserved.</span><span>Sydney, Australia</span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping bag" aria-hidden="true">
+  <header><h2>Your bag</h2><button class="x" id="closeCart" type="button" aria-label="Close bag">✕</button></header>
+  <div class="ship"><span id="shipMsg"></span><div class="meter"><i id="shipBar"></i></div></div>
+  <div class="lines" id="lines"></div>
+  <div class="sum" id="sum">
+    <form class="promo" id="promoForm">
+      <label class="sr" for="promo">Promo code</label>
+      <input class="field" id="promo" placeholder="Promo code">
+      <button class="btn btn-ghost" type="submit">Apply</button>
+    </form>
+    <p class="note" id="promoMsg"></p>
+    <div class="row"><span>Subtotal</span><span id="subT">$0.00</span></div>
+    <div class="row" id="discRow" hidden><span>WELCOME20 (20% off)</span><span id="discT"></span></div>
+    <div class="row"><span>Shipping</span><span id="shipT"></span></div>
+    <div class="row total"><span>Total</span><span id="totT">$0.00</span></div>
+    <a class="btn btn-primary btn-block" id="orderWa" target="_blank" rel="noopener">Send order on WhatsApp</a>
+    <button class="btn btn-ghost btn-block" type="button" id="orderCopy">Copy order details</button>
+    <p class="note">We confirm stock and payment details when we reply.</p>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- Edit these ---------- */
+const CONFIG = {
+  whatsapp: "",                        // digits only, e.g. 61412345678. Empty = customer picks the chat.
+  phone: "+61 20 1234 5678",           // placeholder from the old site
+  address: "123 Beauty Lane, Sydney NSW",
+  freeShipOver: 75,
+  promo: { code: "WELCOME20", off: 0.20 },
+  imgBase: "https://testlink.synergyspark.agency/allalfrobeauty/wp-content/uploads/"
+};
+/* n name, c type, g range, p price, f photo file in img/p/. Prices are placeholders. */
+const PRODUCTS = [
+  {n:"Afro Hair Oil", c:"Hair Oil", g:"Hair", p:34.95, was:44.95, tag:"Best seller", sale:true, stars:5, f:"Argan-Gold-Elixir"},
+  {n:"Curl Define Cream", c:"Styling", g:"Hair", p:24.95, tag:"New", f:"Curl-Define-Cream"},
+  {n:"Deep Moisture Masque", c:"Hair Mask", g:"Hair Masks", p:29.95, f:"Deep-Moisture-Masque"},
+  {n:"Hair Growth Serum", c:"Hair Oil", g:"Hair", p:39.95, f:"Hair-Growth-Serum"},
+  {n:"Sulfur8 Medicated Hair & Scalp Conditioner", c:"Scalp Care", g:"Hair", p:14.95, f:"Dummy-10"},
+  {n:"Shine 'n Jam Conditioning Gel Extra Hold", c:"Styling", g:"Hair", p:18.95, f:"Dummy-24"},
+  {n:"Vaseline Cocoa Glow", c:"Body Lotion", g:"Skin", p:12.95, f:"Dummy-04"},
+  {n:"Goldman For Men Body Lotion", c:"Body Lotion", g:"Skin", p:22.95, f:"Dummy-05"},
+  {n:"Exfoliating Shower Gels", c:"Scrubs & Wash", g:"Skin", p:16.95, f:"Dummy-13"},
+  {n:"Face & Body Scrubs", c:"Scrubs & Wash", g:"Skin", p:19.95, f:"Dummy-22"},
+  {n:"Face & Body Serum", c:"Serums & Oils", g:"Skin", p:27.95, f:"Dummy-09"},
+  {n:"Egyptian Beauty Oil", c:"Serums & Oils", g:"Skin", p:24.95, f:"Dummy-14"},
+  {n:"Body Oil", c:"Serums & Oils", g:"Skin", p:13.95, f:"Dummy-23"},
+  {n:"Pretty White Lightening Body Lotion", c:"Lightening Lotion", g:"Bleaching Creams", p:21.95, f:"Dummy-01"},
+  {n:"Lemon Clear Beauty Lotion", c:"Lightening Lotion", g:"Bleaching Creams", p:17.95, f:"Dummy-02"},
+  {n:"Perfect Glow Carrot Clarifying Lotion", c:"Lightening Lotion", g:"Bleaching Creams", p:23.95, f:"Dummy-03"},
+  {n:"Paw Paw Clarifying Lotion", c:"Lightening Lotion", g:"Bleaching Creams", p:15.95, f:"Dummy-06"},
+  {n:"Papaya Clear Lotion", c:"Lightening Lotion", g:"Bleaching Creams", p:18.95, f:"Dummy-21"},
+  {n:"Bravia Unifying Body Lotion Range", c:"Lightening Lotion", g:"Bleaching Creams", p:32.95, f:"Dummy-20"},
+  {n:"B.B. Clear 5 in 1 Clarifying Cream", c:"Lightening Cream", g:"Bleaching Creams", p:26.95, f:"Dummy-17"},
+  {n:"BB Men Energy Bright Clarifying Cream", c:"Lightening Cream", g:"Bleaching Creams", p:28.95, f:"Dummy-19"},
+  {n:"GlutaMAX AHA Super Whitening Beauty Milk", c:"Lightening Lotion", g:"Bleaching Creams", p:25.95, f:"Dummy-07"},
+  {n:"Lightening Body Oil", c:"Lightening Oil", g:"Bleaching Creams", p:19.95, f:"Dummy-18"},
+  {n:"Ankara Print Earrings", c:"Accessories", g:"Accessories", p:11.95, f:"Dummy-16"},
+  {n:"Ankara Print Accessories", c:"Accessories", g:"Accessories", p:9.95, f:"Dummy-12"}
+];
+const SERVICES = [
+  {n:"Hair styling",       from:45, d:"Wash, define and finish for natural hair."},
+  {n:"Braiding",           from:80, d:"Box braids, cornrows, knotless and more."},
+  {n:"Hair treatment",     from:60, d:"Deep conditioning and repair for dry or damaged hair."},
+  {n:"Hair colouring",     from:95, d:"Colour that keeps your curl pattern healthy."},
+  {n:"Kids hair",          from:30, d:"Gentle, patient styling for little ones."},
+  {n:"Protective styling", from:70, d:"Twists, locs and low-tension styles that last."}
+];
+/* ---------- end of editable data ---------- */
+
+const $ = id => document.getElementById(id);
+const money = v => "$" + v.toFixed(2);
+const counters = {};
+PRODUCTS.forEach((p,i) => {
+  p.id = "p" + i;
+  if(!p.n){ counters[p.c] = (counters[p.c]||0)+1; p.n = (p.c==="Essentials"?"Essential":p.c) + " No. " + String(counters[p.c]).padStart(2,"0"); }
+});
+
+/* Drawn product art. A real photo sits on top when the image host is reachable. */
+const TONES = [["#e8d8bf","#3a2028"],["#e4cfc0","#5b2436"],["#ddd6c2","#2f3a2c"],["#ecd9b8","#4a3320"],["#e6d2cf","#3b2540"]];
+function art(cat, i){
+  const [bg, body] = TONES[i % TONES.length], g = "#b48a3c", lab = "#f4ece1";
+  let s = "";
+  if(cat==="Hair Oil") s = `<rect x="88" y="52" width="24" height="26" rx="10" fill="${body}"/><rect x="84" y="74" width="32" height="16" rx="3" fill="${g}"/><rect x="66" y="88" width="68" height="84" rx="12" fill="${body}"/><rect x="76" y="112" width="48" height="36" rx="3" fill="${lab}"/>`;
+  else if(cat==="Hair Mask") s = `<rect x="50" y="86" width="100" height="20" rx="5" fill="${g}"/><rect x="54" y="104" width="92" height="66" rx="10" fill="${body}"/><rect x="72" y="120" width="56" height="30" rx="3" fill="${lab}"/>`;
+  else if(cat==="Styling") s = `<rect x="94" y="44" width="34" height="9" rx="4" fill="${g}"/><rect x="96" y="50" width="8" height="22" fill="${g}"/><rect x="86" y="70" width="28" height="12" rx="3" fill="${g}"/><rect x="70" y="80" width="60" height="92" rx="10" fill="${body}"/><rect x="80" y="104" width="40" height="44" rx="3" fill="${lab}"/>`;
+  else if(cat==="Treatment") s = `<rect x="80" y="48" width="40" height="10" rx="4" fill="${body}"/><path d="M78 58h44l-6 96H84z" fill="${body}"/><rect x="82" y="152" width="36" height="20" rx="4" fill="${g}"/><rect x="88" y="84" width="24" height="46" rx="3" fill="${lab}"/>`;
+  else s = `<rect x="88" y="56" width="24" height="18" rx="3" fill="${g}"/><rect x="72" y="72" width="56" height="100" rx="14" fill="${body}"/><rect x="82" y="100" width="36" height="40" rx="3" fill="${lab}"/>`;
+  return `<svg viewBox="0 0 200 200" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="200" height="200" fill="${bg}"/><path d="M40 200V110a60 60 0 0 1 120 0v90z" fill="#fff" opacity=".35"/><ellipse cx="100" cy="176" rx="52" ry="7" fill="#000" opacity=".12"/>${s}<path d="M92 126h16M92 134h10" stroke="${g}" stroke-width="2"/></svg>`;
+}
+function photo(f, alt){ return `<img loading="lazy" alt="${alt||""}" src="img/p/${f}.webp" onerror="this.remove()">`; }
+
+/* Hero and story art */
+/* ---------- Product pages: what it is, benefits, how to use. Wording follows the product labels. ---------- */
+const DETAILS = {
+ "Argan-Gold-Elixir":{size:"3.5 fl oz",d:"A premium oil blend made for healthy Afro and Black hair. The label lists a 12-oil botanical blend for strong, nourished, growing curls, coils and locs.",b:["Seals in moisture after wash day","Adds shine without a heavy, greasy feel","Helps soften dry ends and reduce breakage from dryness","Works on natural hair, braids, twists and locs"],u:"Warm a few drops between your palms and smooth through damp or dry hair, focusing on the ends. Massage a little into the scalp two or three times a week."},
+ "Curl-Define-Cream":{d:"A styling cream that gives curls and coils shape and hold while keeping them soft to the touch.",b:["Defines curl pattern for wash-and-go styles","Helps reduce frizz","Leaves hair soft, not crunchy","Good base for twist-outs and braid-outs"],u:"Apply a small amount to clean, damp hair in sections. Rake or scrunch through, then air dry or diffuse."},
+ "Deep-Moisture-Masque":{size:"2 oz / 57 g",d:"A rich deep-conditioning hair mask for dry, thirsty hair that needs more than a regular conditioner.",b:["Deep hydration for dry or brittle hair","Softens and makes detangling easier","Helps restore a healthy look after heat or colour","Ideal as a weekly treatment"],u:"After shampooing, apply generously from mid-lengths to ends. Cover with a cap for 15 to 30 minutes, then rinse well."},
+ "Hair-Growth-Serum":{d:"A lightweight scalp and hair serum in a dropper bottle, made to support a healthy scalp and fuller-looking hair.",b:["Nourishes the scalp and edges","Light formula that does not weigh hair down","Easy, precise dropper application","Pairs well with protective styles"],u:"Part the hair and apply a few drops directly to the scalp. Massage in with your fingertips. Use daily or as needed."},
+ "Dummy-10":{size:"4 oz (113 g)",d:"Sulfur8 Medicated Original Formula is an anti-dandruff hair and scalp conditioner that has been a staple in Black hair care for decades.",b:["Helps control dandruff flaking and itching","Conditions the scalp and hair","Popular under braids, weaves and other protective styles","A little goes a long way"],u:"Part the hair and apply a small amount directly to the scalp. Massage in. Follow the directions on the jar for how often to use."},
+ "Dummy-24":{d:"Shine 'n Jam Conditioning Gel Extra Hold with honey extract. The go-to gel for braiders and for sleek, smooth styles.",b:["Extra hold for braids, twists and ponytails","Smooths edges and flyaways","Adds shine","Conditioning formula with honey extract"],u:"Apply a small amount to the section you are braiding or smoothing. Add more for extra hold."},
+ "Dummy-04":{d:"Vaseline Cocoa Glow is a cocoa butter body moisturiser that leaves skin soft with a healthy glow.",b:["Rich moisture for dry skin","Cocoa butter for a natural glow","Great for elbows, knees and heels","Comforting cocoa scent"],u:"Smooth over the body after bathing while skin is still slightly damp. Use daily."},
+ "Dummy-05":{size:"215 ml / 7.2 fl oz",d:"Goldman For Men Body Lotion with activated bamboo charcoal and vitamin E. The label describes it as extra hydrating and fast absorbing, for face and body.",b:["Hydrates without feeling sticky","Label claims: repairs and protects, unifying and toning","Made for men's skin, face and body","Activated bamboo charcoal with vitamin E"],u:"Apply to clean skin on the face and body once or twice a day. Patch test first."},
+ "Dummy-13":{d:"A range of exfoliating shower gels and shower creams with scrubbing beads, in several scents and formulas.",b:["Cleanses and exfoliates in one step","Buffs away dull, dry skin","Leaves skin feeling smooth and fresh","Choose from several varieties in store"],u:"Lather onto wet skin in the shower with your hands or a sponge, massage gently, then rinse."},
+ "Dummy-22":{d:"Face and body scrub tubs from several brands, for smoothing rough or dull skin.",b:["Lifts away dead skin cells","Leaves skin feeling soft and polished","Helps body lotion absorb better","Use on rough areas like elbows and knees"],u:"Massage a small scoop onto wet skin in circles, then rinse. Use once or twice a week."},
+ "Dummy-09":{d:"A face and body serum in a glass bottle, made to be used under or mixed into your lotion.",b:["Lightweight and quick to absorb","Can be mixed with your body lotion","A little covers a large area","Gives skin a smooth, even look"],u:"Apply a few drops to clean skin or mix into your lotion. Patch test first and follow the label directions."},
+ "Dummy-14":{size:"100 ml",d:"Egyptian Beauty Oil by Asckat Beauty. A silky beauty oil in a keepsake bottle with a gold cap.",b:["Leaves skin soft with a light sheen","Moisturising, as described on the label","Can be used alone or mixed with lotion","Beautiful bottle that makes a nice gift"],u:"Smooth a small amount over clean skin, or mix a few drops into your body lotion."},
+ "Dummy-23":{d:"A nourishing body oil for soft, glowing skin.",b:["Locks in moisture after bathing","Gives skin a healthy sheen","Good for massage","A small amount goes far"],u:"Apply to slightly damp skin after a shower and massage in."},
+ "Dummy-01":{d:"Pretty White! Lightening Body Lotion (lait clarifiant). The label says it evens skin tone and removes dark spots.",b:["Label claims: evens skin tone","Label claims: reduces the look of dark spots","Moisturising body lotion texture","For use on the body"],u:"Apply to clean skin as directed on the bottle."},
+ "Dummy-02":{d:"Lemon Clear clearing beauty lotion (lait traitant), labelled with vitamins C and E.",b:["Label claims: clearing beauty treatment","With vitamins C and E, per the label","Light lotion texture","For use on the body"],u:"Apply to clean skin as directed on the bottle."},
+ "Dummy-03":{d:"Perfect Glow Carrot clarifying lotion. The label describes a concentrated formula with vitamins C and E.",b:["Label claims: clarifying, for a glowing look","Label claims: helps with dark spots","Carrot formula with vitamins C and E","For use on the body"],u:"Apply to clean skin as directed on the bottle."},
+ "Dummy-06":{d:"Paw Paw clarifying lotion (lait clarifiant) with papaya.",b:["Label claims: clarifying for a brighter look","Papaya formula","Moisturising lotion texture","For use on the body"],u:"Apply to clean skin as directed on the bottle."},
+ "Dummy-21":{d:"Papaya Clear clarifying body lotion with papaya.",b:["Label claims: clarifying for a more even look","Papaya formula","Moisturises as it works","For use on the body"],u:"Apply to clean skin as directed on the bottle."},
+ "Dummy-20":{d:"The Bravia range, made with snail extract (baba de caracol): complexion unifying body lotion, body oil, body cream and beauty soap.",b:["Label claims: unifies complexion and perfects the skin","Snail extract formula","Full routine: soap, lotion, cream and oil","Body oil lists 5 plant oils"],u:"Wash with the soap, then apply the lotion or cream to clean skin. Use the oil alone or mixed in. Follow the directions on each pack."},
+ "Dummy-17":{d:"B.B. Clear 5 in 1 clarifying cream with vitamin C. The box lists anti-dark spot, skin toning and moisturising, anti-ageing and radiant skin. One version is marked SPF 15.",b:["Label claims: anti-dark spot","Label claims: toning and moisturising","Label claims: anti-ageing and radiant skin","With vitamin C, per the box"],u:"Apply to clean skin as directed on the box."},
+ "Dummy-19":{d:"BB Men Energy Bright clarifying cream for men. The label lists ginseng extracts and a flawless, even complexion.",b:["Made for men's skin","Label claims: clarifying, even complexion","Ginseng extracts, per the label","Rich cream in a jar"],u:"Apply to clean skin as directed on the jar."},
+ "Dummy-07":{size:"250 mL",d:"GlutaMAX AHA Super Whitening Moisturizing beauty milk with UV filter, in a pump bottle.",b:["Label claims: super whitening","Moisturising beauty milk","UV filter, per the label","Easy pump bottle"],u:"Pump into your hands and apply to clean skin as directed on the bottle."},
+ "Dummy-18":{d:"A lightening body oil (huile éclaircissante) in a pump bottle, to use alone or mixed into lotion.",b:["Label claims: lightening and softening","Can be mixed with your lotion","Pump bottle for easy dosing","For use on the body"],u:"Apply a small amount to clean skin, or mix into your lotion, as directed on the bottle."},
+ "Dummy-16":{d:"Handmade round earrings covered in bright Ankara wax-print fabric. Every pair is a little different.",b:["Bold African print colours","Lightweight and comfortable","Each pair is unique","A great gift"],u:"Keep dry and store flat to protect the fabric."},
+ "Dummy-12":{d:"Handmade accessories in mixed Ankara wax-print fabrics, in a wide choice of colours and patterns.",b:["Authentic African print fabrics","Dozens of patterns to choose from","Handmade","A great gift"],u:"Message us for the patterns currently in stock."}
+};
+const slug = p => "p-" + p.n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+function renderPdp(p){
+  const d = DETAILS[p.f] || {d:"",b:[],u:""};
+  const rel = PRODUCTS.filter(x => x.g===p.g && x!==p).slice(0,4);
+  $("pdp").innerHTML = `
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#top">Home</a> / <a href="#shop" data-crumb="${p.g}">${p.g}</a> / <span>${p.n}</span></nav>
+      <div class="pdp-grid">
+        <div class="pdp-photo">${p.tag?`<span class="badge${p.sale?" sale":""}">${p.sale?"Sale":p.tag}</span>`:""}<img src="img/p/${p.f}.webp" alt="${p.n}"></div>
+        <div class="pdp-info">
+          <p class="eyebrow">${p.c}</p>
+          <h1>${p.n}</h1>
+          ${p.stars?`<div class="stars" aria-label="Rated ${p.stars} out of 5">★★★★★</div>`:""}
+          <div class="pdp-price">${money(p.p)}${p.was?`<s>${money(p.was)}</s>`:""}${d.size?`<span>${d.size}</span>`:""}</div>
+          <p class="pdp-desc">${d.d}</p>
+          <div class="pdp-buy">
+            <span class="qty"><button type="button" id="pdpDec" aria-label="One less">−</button><span id="pdpQty">1</span><button type="button" id="pdpInc" aria-label="One more">+</button></span>
+            <button class="btn-shop" type="button" id="pdpAdd" style="flex:1;max-width:320px">ADD TO BAG <span class="arrow"></span></button>
+          </div>
+          <ul class="pdp-trust"><li>Free shipping over ${money(CONFIG.freeShipOver)}</li><li>100% genuine products</li><li>Local customer support</li></ul>
+        </div>
+      </div>
+      <div class="pdp-more">
+        <div class="pdp-card"><h2>Benefits</h2><ul class="ticks">${d.b.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+        <div class="pdp-card"><h2>How to use</h2><p>${d.u}</p>${p.g==="Bleaching Creams"?`<p class="pdp-note">Benefits are as stated on the product label. Read the full ingredient list, patch test before first use, wear sunscreen, and stop using if irritation occurs.</p>`:""}</div>
+      </div>
+      ${rel.length?`<div class="rule-head" style="margin-top:46px"><h2>You may also like</h2></div><div class="grid">${rel.map(card).join("")}</div>`:""}
+    </div>`;
+  let q = 1;
+  $("pdpInc").onclick = () => { q++; $("pdpQty").textContent = q; };
+  $("pdpDec").onclick = () => { q = Math.max(1,q-1); $("pdpQty").textContent = q; };
+  $("pdpAdd").onclick = () => { cart[p.id]=(cart[p.id]||0)+q; renderCart(); toast(q+" x "+p.n+" added to your bag"); };
+  const c = $("pdp").querySelector("[data-crumb]"); c.onclick = () => setCat(c.dataset.crumb);
+}
+function route(){
+  const h = location.hash.slice(1), p = PRODUCTS.find(x => slug(x)===h), m = document.getElementById("top");
+  if(p){ renderPdp(p); m.classList.add("pdp-on"); $("hdr").classList.add("solid"); window.scrollTo(0,0); document.title = p.n + " | All Afro Beauty"; }
+  else { const was = m.classList.contains("pdp-on"); m.classList.remove("pdp-on"); $("hdr").classList.remove("solid"); document.title = "All Afro Beauty";
+    if(was){ const el = h && document.getElementById(h); if(el) el.scrollIntoView(); else window.scrollTo(0,0); } }
+}
+window.addEventListener("hashchange", route);
+
+/* ---------- Shop ---------- */
+const state = { cat:"All", q:"", sort:"featured", shown:8 };
+const GROUP = {"Hair Oil":"Hair","Styling":"Hair","Treatment":"Hair","Essentials":"Hair","Hair Mask":"Hair Masks"};
+PRODUCTS.forEach(p => p.g = p.g || GROUP[p.c] || p.c);
+const cats = ["All","Hair","Skin","Bleaching Creams","Hair Masks","Accessories","Deals"];
+$("chips").innerHTML = cats.map(c => `<button class="chip" type="button" data-cat="${c}" aria-pressed="${c==="All"}">${c==="All"?"All products":c}</button>`).join("");
+function listed(){
+  let a = PRODUCTS.filter(p => (state.cat==="All"||p.g===state.cat||p.c===state.cat||(state.cat==="Deals"&&p.sale)) && p.n.toLowerCase().includes(state.q));
+  if(state.sort==="low") a = [...a].sort((x,y)=>x.p-y.p);
+  if(state.sort==="high") a = [...a].sort((x,y)=>y.p-x.p);
+  if(state.sort==="az") a = [...a].sort((x,y)=>x.n.localeCompare(y.n,undefined,{numeric:true}));
+  return a;
+}
+function card(p){ return `
+    <article class="prod">
+      <a class="plink" href="#${slug(p)}" aria-label="${p.n}: details"><div class="shot">${p.tag?`<span class="badge${p.sale?" sale":""}">${p.sale?"Sale":p.tag}</span>`:""}${photo(p.f,p.n)}</div></a>
+      <span class="cat">${p.c}</span>
+      <h3><a href="#${slug(p)}">${p.n}</a></h3>
+      ${p.stars?`<div class="stars" aria-label="Rated ${p.stars} out of 5">★★★★★</div>`:""}
+      <div class="price">${money(p.p)}${p.was?`<s>${money(p.was)}</s>`:""}</div>
+      <button class="addbtn" type="button" data-add="${p.id}">Add to bag</button>
+    </article>`; }
+function renderShop(){
+  const a = listed(), view = a.slice(0, state.shown);
+  $("shopCount").textContent = (state.cat==="All"?"":state.cat+" · ") + a.length + (a.length===1?" product":" products");
+  $("grid").innerHTML = view.length ? view.map(card).join("") : `<p class="empty">This range is being stocked. Check back soon or browse all products.</p>`;
+  $("moreBtn").parentElement.hidden = a.length <= state.shown;
+  document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat===state.cat));
+}
+function setCat(c){ state.cat = c; state.shown = 8; renderShop(); }
+$("chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if(b) setCat(b.dataset.cat); });
+$("search").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); state.shown = 8; renderShop(); });
+$("sort").addEventListener("change", e => { state.sort = e.target.value; renderShop(); });
+$("moreBtn").addEventListener("click", () => { state.shown += 8; renderShop(); });
+$("bestRail").innerHTML = PRODUCTS.slice(0,8).map(card).join("");
+document.querySelectorAll("a[data-cat],button.tile").forEach(a => a.addEventListener("click", () => { setCat(a.dataset.cat); if(a.hasAttribute("data-go")) document.getElementById("shop").scrollIntoView(); }));
+
+/* ---------- Bag ---------- */
+let cart = {}, promoOn = false;
+try { const s = JSON.parse(localStorage.getItem("aab-bag")||"{}"); cart = s.cart||{}; promoOn = !!s.promoOn; } catch(e){}
+const save = () => { try { localStorage.setItem("aab-bag", JSON.stringify({cart, promoOn})); } catch(e){} };
+const byId = id => PRODUCTS.find(p => p.id===id);
+function totals(){
+  const items = Object.keys(cart).filter(byId);
+  const sub = items.reduce((t,id) => t + byId(id).p*cart[id], 0);
+  const disc = promoOn ? sub*CONFIG.promo.off : 0;
+  return { items, sub, disc, total: sub-disc, qty: items.reduce((t,id)=>t+cart[id],0) };
+}
+function orderText(){
+  const t = totals();
+  let s = "Hi All Afro Beauty, I would like to order:\n" + t.items.map(id => `• ${cart[id]} x ${byId(id).n} (${money(byId(id).p*cart[id])})`).join("\n");
+  if(t.disc) s += `\nCode ${CONFIG.promo.code}: -${money(t.disc)}`;
+  s += `\nTotal: ${money(t.total)}` + (t.total>=CONFIG.freeShipOver ? " with free shipping" : " plus shipping");
+  return s;
+}
+const waLink = text => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text);
+function renderCart(){
+  const t = totals();
+  $("cartCount").textContent = t.qty;
+  $("lines").innerHTML = t.items.length ? t.items.map(id => { const p = byId(id); return `
+    <div class="line"><div class="shot">${art(p.c, PRODUCTS.indexOf(p))}${photo(p.f,"")}</div>
+      <div><b>${p.n}</b><span class="note">${money(p.p)} each</span><br>
+        <span class="qty"><button type="button" data-dec="${id}" aria-label="One less ${p.n}">−</button><span>${cart[id]}</span><button type="button" data-inc="${id}" aria-label="One more ${p.n}">+</button></span></div>
+      <div><span class="amt">${money(p.p*cart[id])}</span><button class="rm" type="button" data-rm="${id}">Remove</button></div></div>`; }).join("")
+    : `<p class="cart-empty">Your bag is empty.<br>Add something your hair will thank you for.</p>`;
+  $("sum").style.display = t.items.length ? "" : "none";
+  $("subT").textContent = money(t.sub);
+  $("discRow").hidden = !t.disc; $("discT").textContent = "-" + money(t.disc);
+  const left = CONFIG.freeShipOver - t.total;
+  $("shipT").textContent = left<=0 ? "Free" : "Confirmed with your order";
+  $("totT").textContent = money(t.total);
+  $("shipMsg").textContent = !t.items.length ? `Free shipping on orders over ${money(CONFIG.freeShipOver)}` : left<=0 ? "You have free shipping." : `${money(left)} away from free shipping`;
+  $("shipBar").style.width = Math.min(100, t.total/CONFIG.freeShipOver*100) + "%";
+  $("promoMsg").textContent = promoOn ? CONFIG.promo.code + " applied. New customers only." : "";
+  $("orderWa").href = waLink(orderText());
+  save();
+}
+function openCart(on){ $("drawer").classList.toggle("on",on); $("scrim").classList.toggle("on",on); $("drawer").setAttribute("aria-hidden",!on); if(on) $("closeCart").focus(); }
+let toastT; function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("on"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("on"),2200); }
+document.addEventListener("click", e => {
+  const d = e.target.closest("[data-add],[data-inc],[data-dec],[data-rm],[data-copy]"); if(!d) return;
+  const {add,inc,dec,rm,copy} = d.dataset;
+  if(add){ cart[add]=(cart[add]||0)+1; renderCart(); toast(byId(add).n + " added to your bag"); }
+  if(inc){ cart[inc]++; renderCart(); }
+  if(dec){ cart[dec]--; if(cart[dec]<1) delete cart[dec]; renderCart(); }
+  if(rm){ delete cart[rm]; renderCart(); }
+  if(copy) copyText($(copy).textContent);
+});
+function copyText(t){ try { navigator.clipboard.writeText(t).then(()=>toast("Copied"),()=>toast("Could not copy. Select the text instead.")); } catch(e){ toast("Could not copy. Select the text instead."); } }
+$("cartBtn").addEventListener("click", () => openCart(true));
+$("closeCart").addEventListener("click", () => openCart(false));
+$("scrim").addEventListener("click", () => openCart(false));
+document.addEventListener("keydown", e => { if(e.key==="Escape") openCart(false); });
+$("orderCopy").addEventListener("click", () => copyText(orderText()));
+$("promoForm").addEventListener("submit", e => { e.preventDefault();
+  const v = $("promo").value.trim().toUpperCase();
+  if(v===CONFIG.promo.code){ promoOn = true; $("promo").value=""; renderCart(); }
+  else { promoOn = false; renderCart(); $("promoMsg").textContent = v ? "That code is not valid. Check the spelling and try again." : "Enter a code first."; }
+});
+
+/* ---------- Services and booking ---------- */
+$("svc").innerHTML = SERVICES.map((s,i) => `<li><span class="n">${String(i+1).padStart(2,"0")}</span><div><h3>${s.n}</h3><p>${s.d}</p></div><div class="from"><small>From</small>${"$"+s.from}</div><a class="btn btn-gold" href="#book" data-svc="${s.n}">Book</a></li>`).join("");
+$("bService").innerHTML = SERVICES.map(s => `<option>${s.n}</option>`).join("") + "<option>Not sure yet</option>";
+$("svc").addEventListener("click", e => { const a = e.target.closest("[data-svc]"); if(a) $("bService").value = a.dataset.svc; });
+$("vAddr").textContent = CONFIG.address;
+$("vPhone").textContent = CONFIG.phone; $("vPhone").href = "tel:" + CONFIG.phone.replace(/\s/g,"");
+$("bookForm").addEventListener("submit", e => { e.preventDefault();
+  const name = $("bName").value.trim(), phone = $("bPhone").value.trim();
+  if(!name || !phone){ $("bErr").textContent = "Add your name and phone number so we can confirm your booking."; $("bResult").classList.remove("on"); return; }
+  $("bErr").textContent = "";
+  const d = $("bDate").value ? new Date($("bDate").value+"T12:00").toLocaleDateString("en-AU",{weekday:"long",day:"numeric",month:"long"}) : "Flexible";
+  const text = `Hi All Afro Beauty, I would like to book.\nName: ${name}\nPhone: ${phone}\nService: ${$("bService").value}\nPreferred date: ${d}` + ($("bNotes").value.trim() ? `\nNotes: ${$("bNotes").value.trim()}` : "");
+  $("bText").textContent = text; $("bWa").href = waLink(text); $("bResult").classList.add("on");
+});
+$("newsForm").addEventListener("submit", e => { e.preventDefault(); $("newsMsg").textContent = "Newsletter sign-up opens when the site goes live."; });
+
+/* ---------- Nav and reviews ---------- */
+$("menuBtn").addEventListener("click", () => { const o = $("nav").classList.toggle("open"); $("hdr").classList.toggle("open",o); $("menuBtn").setAttribute("aria-expanded", o); });
+$("nav").addEventListener("click", () => { $("nav").classList.remove("open"); $("hdr").classList.remove("open"); $("menuBtn").setAttribute("aria-expanded", false); });
+const rail = $("rail"), step = dir => rail.scrollBy({left: dir*(rail.firstElementChild.offsetWidth+16), behavior:"smooth"});
+$("prevQ").addEventListener("click", () => step(-1)); $("nextQ").addEventListener("click", () => step(1));
+rail.addEventListener("keydown", e => { if(e.key==="ArrowRight") step(1); if(e.key==="ArrowLeft") step(-1); });
+
+const onScroll = () => $("hdr").classList.toggle("scrolled", window.scrollY > 30); window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+$("searchBtn").addEventListener("click", () => { document.getElementById("shop").scrollIntoView(); setTimeout(() => $("search").focus(), 350); });
+renderShop(); renderCart(); route();
+</script>
+</body>
+</html>
